@@ -13,6 +13,6 @@ const VacunaSchema = new Schema({
   },
 });
 
-const Vacuna = model("Vacuna", VacunaSchema, "vacuna");
+const Vacuna = model("Vacuna", VacunaSchema, "vacunas");
 
 module.exports = Vacuna;

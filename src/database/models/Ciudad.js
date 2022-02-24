@@ -11,6 +11,6 @@ const CiudadSchema = new Schema({
   },
 });
 
-const Ciudad = model("Vacuna", CiudadSchema, "vacuna");
+const Ciudad = model("Ciudad", CiudadSchema, "ciudades");
 
 module.exports = Ciudad;
