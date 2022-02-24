@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const debug = require("debug")("vacunas:results");
 const util = require("util");
 const listCenters = require("../actions/listCenters");
+const listVacunatedPerCenter = require("../actions/listVacunatedPerCenter");
 
 const askForCommand = async () =>
   inquirer.prompt([
@@ -27,6 +28,15 @@ const startUI = async () => {
 
         const result = await listCenters();
         debug(chalk.greenBright("Centros de vacunación encontrados!"));
+        debug(util.inspect(result, false, null, true));
+        break;
+      }
+
+      case "Listar personas vacunadas por centro": {
+        debug(chalk.whiteBright("Buscando personas vacunadas por centro..."));
+
+        const result = await listVacunatedPerCenter();
+        debug(chalk.greenBright("Personas vacunadas por centro encontradas"));
         debug(util.inspect(result, false, null, true));
         break;
       }
