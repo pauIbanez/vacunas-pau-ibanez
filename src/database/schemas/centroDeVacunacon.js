@@ -1,5 +1,4 @@
 const { Schema } = require("mongoose");
-const Vacuna = require("../models/Vacuna");
 
 const localizacionSchema = new Schema({
   coordenadas: {
@@ -21,7 +20,7 @@ const centroDeVacunacionSchema = new Schema({
     type: localizacionSchema,
   },
   vacunas: {
-    type: [Vacuna],
+    type: [Schema.Types.ObjectId],
     ref: "vacuna",
   },
 });

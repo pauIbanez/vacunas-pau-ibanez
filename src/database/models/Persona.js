@@ -1,6 +1,5 @@
 const { model, Schema } = require("mongoose");
 const centroDeVacunacionSchema = require("../schemas/centroDeVacunacon");
-const Vacuna = require("./Vacuna");
 
 const PersonaSchema = new Schema({
   dni: {
@@ -13,8 +12,8 @@ const PersonaSchema = new Schema({
     required: true,
   },
   vacuna: {
-    type: Vacuna,
-    ref: "vacuna",
+    type: [Schema.Types.ObjectId],
+    ref: "Vacuna",
   },
   dosis: {
     type: [Date],
